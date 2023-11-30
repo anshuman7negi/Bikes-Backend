@@ -1,6 +1,5 @@
 class Api::BikesController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:delete_bikes]
-
+   
     def display_bikes
         @bike = Bike.order(created_at: :desc)
         render json: {bikes: @bike}

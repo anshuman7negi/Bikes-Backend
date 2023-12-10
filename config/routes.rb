@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'display_bikes', to: 'bikes#display_bikes'
-    post 'create_bike', to: 'bikes#create_bikes'
+    post 'create_bikes', to: 'bikes#create_bikes'
     delete 'delete_bikes/:id', to: 'bikes#delete_bikes', as: 'delete_bikes'
   end
 

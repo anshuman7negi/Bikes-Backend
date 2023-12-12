@@ -73,4 +73,10 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins 'http://127.0.0.1:5173' # Update this with your actual frontend URL
+      resource '/api/*', headers: :any, methods: [:get, :post, :put, :delete]
+    end
+  end
 end

@@ -22,9 +22,9 @@ class Api::BikesController < ApplicationController
 
         if @bike.destroy
             render json: { message: 'Bike deleted successfully' }
-          else
+        else
             render json: { error: 'Failed to delete bike' }, status: :unprocessable_entity
-          end
+        end
     end
 
     private
